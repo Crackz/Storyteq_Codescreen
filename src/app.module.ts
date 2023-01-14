@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
+import { TradesModule } from './modules/trades/trades.module';
 
 @Module({
-    imports: [],
-    providers: [AppService],
+    imports: [TradesModule],
+    providers: [],
 })
 export class AppModule {}
