@@ -112,6 +112,6 @@ export class TradesService {
      * Note this should always resolve a number or throw error.
      */
     totalNumberOfWellBehavedCompanies(): number {
-        return this._excessiveCancellingCompanies.size;
+        return this._wellBehavedCompanies.size;
     }
 }
