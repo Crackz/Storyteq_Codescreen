@@ -1,4 +1,4 @@
-export enum OrderType {
+export enum TradeOrderType {
     NEW_ORDER = 'D',
     CANCELLATION = 'F',
 }
@@ -6,7 +6,7 @@ export enum OrderType {
 export class Trade {
     date: Date;
     companyName: string;
-    orderType: OrderType;
+    orderType: TradeOrderType;
     quantity: number;
 
     constructor(date: string, companyName: string, orderType: string, quantity: string) {
@@ -24,14 +24,14 @@ export class Trade {
         return new Date(parsedDate);
     }
 
-    private _checkOrderType(orderType?: string) {
+    private _checkOrderType(orderType?: string): TradeOrderType {
         switch (orderType) {
             case 'D':
-                return OrderType.NEW_ORDER;
+                return TradeOrderType.NEW_ORDER;
             case 'F':
-                return OrderType.CANCELLATION;
+                return TradeOrderType.CANCELLATION;
             default:
-                throw new Error(`Couldn't parse order type ${orderType}`);
+                throw new Error(`Couldn't parse order type '${orderType}'`);
         }
     }
 
@@ -47,5 +47,9 @@ export class Trade {
             throw new Error(`Couldn't parse quantity: ${quantity}`);
         }
         return parsedQuantity;
+    }
+
+    getDateInSeconds(): number {
+        return this.date.getTime() / 1000;
     }
 }

@@ -58,7 +58,7 @@ export class TradesStreamService implements OnModuleInit, OnModuleDestroy {
                 const trade = new Trade(date, companyName, orderType, quantity);
                 onTrade(trade);
             } catch (err: unknown) {
-                this._logger.verbose(`Ignored Line: ${line}`);
+                this._logger.warn(`Ignored Line: ${line}`, err);
             }
         });
 
