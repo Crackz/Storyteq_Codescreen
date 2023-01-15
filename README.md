@@ -1,9 +1,19 @@
-# Setup
-
 # Assumptions
 - It's okay to have a slow app startup 
-- Trades are ordered by time
-- Company won't issue cancelling order with insufficient existing orders
+- Company won't issue cancelling order with insufficient quantity
+
+# Summary
+> On app initialization, I create a node readable stream to read the trades csv which gets passed to a readline stream so I can read line by line and then after parsing the line. the data is validated and named as a Trade in trades stream service. Trade is received by a handler in trades service that takes into consideration the time overlapping, whether the company is still well behaved or not, etc...
+
+# Run the app
+
+```bash
+# To Start Development On Watch Mode
+$ npm run start:dev
+
+# To Run Tests Once
+$ npm run test
+```
 
 ----------------------------------------------------------------
 # Task: JavaScript-CodeScreen-Excessive-Trade-Cancelling
