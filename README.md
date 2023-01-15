@@ -1,6 +1,9 @@
 # Setup
 
-
+# Assumptions
+- It's okay to have a slow app startup 
+- Trades are ordered by time
+- Company won't issue cancelling order with insufficient existing orders
 
 ----------------------------------------------------------------
 # Task: JavaScript-CodeScreen-Excessive-Trade-Cancelling
