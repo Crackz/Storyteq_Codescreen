@@ -3,12 +3,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as readline from 'readline';
 import { TradesService } from './trades.service';
-import { Trade } from './utils/trade';
+import { Trade } from '../utils/trade';
 
 @Injectable()
 export class TradesStreamService implements OnModuleInit, OnModuleDestroy {
     private _logger = new Logger('Trades Stream');
-    private _tradesCSVPath = path.join(__dirname, '../../assets/trades.csv');
+    private _tradesCSVPath = path.join(__dirname, '../../../assets/trades.csv');
     private _tradesStream: fs.ReadStream;
     private _tradesReadLine: readline.ReadLine;
 

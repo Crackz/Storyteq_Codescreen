@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { TradesStreamService } from './trades-stream.service';
-import { TradesService } from './trades.service';
+import { TradesStreamService } from './services/trades-stream.service';
+import { TradesService } from './services/trades.service';
 
 @Module({
     providers: [TradesStreamService, TradesService],

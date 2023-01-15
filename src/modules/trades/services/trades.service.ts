@@ -1,11 +1,10 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { IntervalTree, Interval } from 'node-interval-tree';
-import { CompanyTradeInterval } from './interfaces/trade-interval';
-import { TradeOrderType, Trade } from './utils/trade';
+import { Injectable } from '@nestjs/common';
+import { Interval, IntervalTree } from 'node-interval-tree';
+import { CompanyTradeInterval } from '../interfaces/trade-interval';
+import { Trade, TradeOrderType } from '../utils/trade';
 
 @Injectable()
 export class TradesService {
-    private _logger = new Logger('Trades');
     private _companiesIntervalsTrees = new Map<string, IntervalTree<CompanyTradeInterval>>();
     private _wellBehavedCompanies = new Set<string>();
     private _excessiveCancellingCompanies = new Set<string>();

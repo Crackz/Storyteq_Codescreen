@@ -1,7 +1,7 @@
 import { Logger, ShutdownSignal } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { TradesService } from './modules/trades/trades.service';
+import { TradesService } from './modules/trades/services/trades.service';
 
 async function bootstrap() {
     const logger = new Logger('App');
